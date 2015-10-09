@@ -1,4 +1,6 @@
 from sklearn.base import BaseEstimator, TransformerMixin
+from nltk import word_tokenize
+from nltk.stem import WordNetLemmatizer
 
 class ExtractRecipe():
     """ 
@@ -39,7 +41,8 @@ class ExtractRecipe():
     	"""
     	Method that returns a cleaned up version of the entered ingredient.
     	"""
-    	return ''.join(x for x in s if x.isalnum())
+    	from re import sub
+    	return sub('[^A-Za-z0-9]+', ' ', s)
     def get_train(self):
         """
         Method that returns a dictionary of data for the training set.
@@ -188,19 +191,6 @@ class RecipeModel():
 			return pred
 		else:
 			return self.encoder.inverse_transform(pred.argmax(1))
-
-class ShuffleText(BaseEstimator, TransformerMixin):
-    """
-    Shuffle the order of ingredients in the recipe.
-    """
-    def fit(self, x, y=None):
-        return self
-    def transform(self, series):   	
-        return series.str.split(', ?').apply(self.shuffText)        
-    def shuffText(self, x):
-    	from random import shuffle
-    	shuffle(x)
-    	return ', '.join(x)
     	
 class VarSelect(BaseEstimator, TransformerMixin):
     def __init__(self, keys):
@@ -209,6 +199,15 @@ class VarSelect(BaseEstimator, TransformerMixin):
         return self
     def transform(self, df):
         return df[self.keys]
+
+class LemmaTokenizer(object):
+	def __init__(self):
+		self.wnl = WordNetLemmatizer()
+	def __call__(self, doc):
+		return [self.wnl.lemmatize(t) for t in word_tokenize(doc)]
+
+def stripString(s):
+	return ', '.join([''.join(y.lower() for y in x if y.isalnum()) for x in s.split(',')])
 
 def loadTrainSet(dir='../data/train.json'):
 	"""

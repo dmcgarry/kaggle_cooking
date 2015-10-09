@@ -24,19 +24,19 @@ from helper import *
 #############
 
 ingred_pipe = Pipeline([
-    ('tfidf', TfidfVectorizer(strip_accents='unicode',analyzer="char")),
+    ('tfidf', TfidfVectorizer(strip_accents='unicode',analyzer="char",preprocessor=stripString)),
     ('feat', SelectPercentile(chi2)),
     ('model', LogisticRegression())
 ])
 ingred_grid = {
     'tfidf__ngram_range':[(2,6)],
-    'feat__percentile':[85,80,75],
+    'feat__percentile':[95,90,85],
     'model__C':[5]
 }
 
 pipe_glm = Pipeline([
-	('shuff', ShuffleText()),
-    ('tfidf', TfidfVectorizer(strip_accents='unicode',analyzer="char")),
+    ('tfidf', TfidfVectorizer(strip_accents='unicode',
+    	analyzer="char",preprocessor=stripString)),
     ('feat', SelectPercentile(chi2)),
     ('model', LogisticRegression())
 ])
@@ -44,12 +44,12 @@ grid_glm = {
 	'greek':{
 		'model__C': [5], 
 		'tfidf__ngram_range': [(2, 6)], 
-		'feat__percentile': [38,37,36]
+		'feat__percentile': [37]
 	},
 	'southern_us':{
 		'model__C': [5], 
 		'tfidf__ngram_range': [(2, 6)], 
-		'feat__percentile': [56,55,52]
+		'feat__percentile': [57]
 	},
 	'filipino':{
 		'model__C': [7], 
@@ -84,22 +84,22 @@ grid_glm = {
 	'chinese':{
 		'model__C': [5], 
 		'tfidf__ngram_range': [(2, 6)], 
-		'feat__percentile': [77,76]
+		'feat__percentile': [76]
 	},
 	'british':{
 		'model__C': [10], 
 		'tfidf__ngram_range': [(2, 6)], 
-		'feat__percentile': [76,75,74]
+		'feat__percentile': [75]
 	},
 	'thai':{
 		'model__C': [5], 
 		'tfidf__ngram_range': [(2, 6)], 
-		'feat__percentile': [98,97]
+		'feat__percentile': [97]
 	},
 	'vietnamese':{
 		'model__C': [3], 
 		'tfidf__ngram_range': [(2, 6)], 
-		'feat__percentile': [27,25,23]
+		'feat__percentile': [27]
 	},
 	'cajun_creole':{
 		'model__C': [5], 
@@ -114,7 +114,7 @@ grid_glm = {
 	'french':{
 		'model__C': [5], 
 		'tfidf__ngram_range': [(2, 6)], 
-		'feat__percentile': [47,45,43]
+		'feat__percentile': [46]
 	},
 	'japanese':{
 		'model__C': [5], 
@@ -124,7 +124,7 @@ grid_glm = {
 	'irish':{
 		'model__C': [8], 
 		'tfidf__ngram_range': [(2, 6)], 
-		'feat__percentile': [20,15,10]
+		'feat__percentile': [17,15,13]
 	},
 	'korean':{
 		'model__C': [8], 
@@ -134,7 +134,7 @@ grid_glm = {
 	'moroccan':{
 		'model__C': [10], 
 		'tfidf__ngram_range': [(2, 6)], 
-		'feat__percentile': [56,55,54]
+		'feat__percentile': [55]
 	},
 	'russian':{
 		'model__C': [6], 
@@ -144,8 +144,8 @@ grid_glm = {
 }
 
 pipe_xgb = Pipeline([
-    ('shuff', ShuffleText()),
-    ('tfidf', TfidfVectorizer(strip_accents='unicode')),
+    ('tfidf', TfidfVectorizer(strip_accents='unicode',
+    	tokenizer=LemmaTokenizer())),
     ('model', xgb.XGBClassifier())
 ])
 grid_xgb = {
@@ -153,24 +153,24 @@ grid_xgb = {
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
 		'model__learning_rate': [0.08], 
-		'model__max_depth': [8,10], 
-		'model__n_estimators': [300], 
+		'model__max_depth': [6], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'southern_us':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
 		'model__learning_rate': [0.10], 
-		'model__max_depth': [12,14], 
-		'model__n_estimators': [300], 
+		'model__max_depth': [16], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'filipino':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
 		'model__learning_rate': [0.08], 
-		'model__max_depth': [6,8], 
-		'model__n_estimators': [300], 
+		'model__max_depth': [4], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'indian':{
@@ -178,138 +178,139 @@ grid_xgb = {
 		'model__nthread': [20], 
 		'model__learning_rate': [0.06], 
 		'model__max_depth': [8], 
-		'model__n_estimators': [400], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'jamaican':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
 		'model__learning_rate': [0.04], 
-		'model__max_depth': [12,14], 
-		'model__n_estimators': [300], 
+		'model__max_depth': [14], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'spanish':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
-		'model__learning_rate': [0.06], 
-		'model__max_depth': [10,12], 
-		'model__n_estimators': [300], 
+		'model__learning_rate': [0.08], 
+		'model__max_depth': [14], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'italian':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
 		'model__learning_rate': [0.14], 
-		'model__max_depth': [8,10], 
-		'model__n_estimators': [300], 
+		'model__max_depth': [10], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'mexican':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
-		'model__learning_rate': [0.10], 
-		'model__max_depth': [10,12], 
-		'model__n_estimators': [300], 
+		'model__learning_rate': [0.12], 
+		'model__max_depth': [10], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'chinese':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
-		'model__learning_rate': [0.08], 
-		'model__max_depth': [8,10], 
-		'model__n_estimators': [300], 
+		'model__learning_rate': [0.10], 
+		'model__max_depth': [6], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'british':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
 		'model__learning_rate': [0.06], 
-		'model__max_depth': [8,10], 
-		'model__n_estimators': [300], 
+		'model__max_depth': [10], 
+		'model__n_estimators': [400], 
 		'model__subsample': [0.6]
 	},
 	'thai':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
-		'model__learning_rate': [0.12], 
-		'model__max_depth': [8,10], 
-		'model__n_estimators': [300], 
+		'model__learning_rate': [0.14], 
+		'model__max_depth': [10], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'vietnamese':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
 		'model__learning_rate': [0.04], 
-		'model__max_depth': [8,10], 
-		'model__n_estimators': [300], 
+		'model__max_depth': [10], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'cajun_creole':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
-		'model__learning_rate': [0.04], 
-		'model__max_depth': [8,10], 
-		'model__n_estimators': [300], 
+		'model__learning_rate': [0.06], 
+		'model__max_depth': [10], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'brazilian':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
 		'model__learning_rate': [0.04], 
-		'model__max_depth': [8,10], 
-		'model__n_estimators': [300], 
+		'model__max_depth': [10], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'french':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
 		'model__learning_rate': [0.10], 
-		'model__max_depth': [8,10], 
-		'model__n_estimators': [300], 
+		'model__max_depth': [10], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'japanese':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
-		'model__learning_rate': [0.06], 
-		'model__max_depth': [8,10], 
-		'model__n_estimators': [300], 
+		'model__learning_rate': [0.08], 
+		'model__max_depth': [8], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'irish':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
-		'model__learning_rate': [0.04], 
-		'model__max_depth': [10,12], 
-		'model__n_estimators': [300], 
+		'model__learning_rate': [0.06], 
+		'model__max_depth': [14], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'korean':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
-		'model__learning_rate': [0.08], 
-		'model__max_depth': [6,8], 
-		'model__n_estimators': [300], 
+		'model__learning_rate': [0.10], 
+		'model__max_depth': [6], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'moroccan':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
-		'model__learning_rate': [0.08], 
-		'model__max_depth': [8,10], 
-		'model__n_estimators': [300], 
+		'model__learning_rate': [0.10], 
+		'model__max_depth': [8], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	},
 	'russian':{
 		'tfidf__ngram_range': [(1, 2)], 
 		'model__nthread': [20], 
-		'model__learning_rate': [0.04], 
-		'model__max_depth': [8,10], 
-		'model__n_estimators': [300], 
+		'model__learning_rate': [0.06], 
+		'model__max_depth': [10], 
+		'model__n_estimators': [500], 
 		'model__subsample': [0.6]
 	}
 }
+
 
 vars = [u'ingredient_count',0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,
         u'pred_text_greek', u'pred_text_southern_us', u'pred_text_filipino',
@@ -321,13 +322,13 @@ vars = [u'ingredient_count',0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,
     	u'pred_text_moroccan', u'pred_text_russian']
 
 
-
 pipe_xgb_final = Pipeline([
     ('union', FeatureUnion([
         ('lsa', Pipeline([
             ('var', VarSelect(keys='ingredients')),
-        	('tfidf', TfidfVectorizer(strip_accents='unicode',
-        		analyzer="char",ngram_range=(2,6))),
+        	('tfidf', TfidfVectorizer(
+        		strip_accents='unicode',analyzer="char",
+        		ngram_range=(2,6),preprocessor=stripString)),
             ('svd', TruncatedSVD())
         ])),
         ('feat', Pipeline([
@@ -340,21 +341,21 @@ pipe_xgb_final = Pipeline([
 ])
 grid_xgb_final = {
 	'union__lsa__svd__n_components':[50],
-    'feat__k':[75,65],
+    'feat__k':[85,75],
     'model__n_estimators':[750],
-    'model__learning_rate': [0.08,0.10],
-    'model__max_depth':[16],
+    'model__learning_rate': [0.08],
+    'model__max_depth':[16,18],
     'model__subsample': [0.65],
     'model__nthread':[20]
 }
-
 
 pipe_rf_final = Pipeline([
     ('union', FeatureUnion([
         ('lsa', Pipeline([
             ('var', VarSelect(keys='ingredients')),
-        	('tfidf', TfidfVectorizer(strip_accents='unicode',
-        		analyzer="char",ngram_range=(2,6))),
+        	('tfidf', TfidfVectorizer(
+        		strip_accents='unicode',analyzer="char",
+        		ngram_range=(2,6),tokenizer=LemmaTokenizer())),
             ('svd', TruncatedSVD())
         ])),
         ('feat', Pipeline([
@@ -366,9 +367,9 @@ pipe_rf_final = Pipeline([
     ('model', RandomForestClassifier())
 ])
 grid_rf_final = {
-	'union__lsa__svd__n_components':[75],
+	'union__lsa__svd__n_components':[60,75,90],
     'feat__k':[80],
-    'model__n_estimators':[500,1000],
+    'model__n_estimators':[250,500,750],
     'model__max_features':[8],
     'model__max_depth':[35],
     'model__n_jobs':[20]
@@ -381,7 +382,7 @@ grid_rf_final = {
 def main():
 	# load data
 	train, encoder = loadTrainSet()
-	cv = KFold(train.shape[0], n_folds=5, shuffle=True)
+	cv = KFold(train.shape[0], n_folds=8, shuffle=True)
 
 	# train ingredient model
 	print "Ingredient Model"

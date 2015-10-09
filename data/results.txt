@@ -1,196 +1,196 @@
 Ingredient Model
-Best Score: 0.61704
-Best Grid {'model__C': 5, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 85}
+Best Score: 0.53666
+Best Grid {'model__C': 5, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 95}
 
 Text Model: greek
-Best Score: 0.97888
+Best Score: 0.97970
 Best Grid {'model__C': 5, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 37}
-Best Score: 0.95432
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.08, 'model__max_depth': 8, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.96
-B Weight: 0.04
-Best Blended Score: 0.97918
+Best Score: 0.97510
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.08, 'model__max_depth': 6, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.58
+B Weight: 0.42
+Best Blended Score: 0.98093
 
 Text Model: southern_us
-Best Score: 0.96535
-Best Grid {'model__C': 5, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 56}
-Best Score: 0.94490
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.1, 'model__max_depth': 14, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.88
-B Weight: 0.12
-Best Blended Score: 0.96576
+Best Score: 0.96597
+Best Grid {'model__C': 5, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 57}
+Best Score: 0.96239
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.1, 'model__max_depth': 16, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.5
+B Weight: 0.5
+Best Blended Score: 0.96900
 
 Text Model: filipino
-Best Score: 0.96251
+Best Score: 0.96470
 Best Grid {'model__C': 7, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 65}
-Best Score: 0.93164
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.08, 'model__max_depth': 6, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.98
-B Weight: 0.02
-Best Blended Score: 0.96266
+Best Score: 0.94619
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.08, 'model__max_depth': 4, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.88
+B Weight: 0.12
+Best Blended Score: 0.96512
 
 Text Model: indian
-Best Score: 0.99191
+Best Score: 0.99189
 Best Grid {'model__C': 3, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 52}
-Best Score: 0.98431
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.06, 'model__max_depth': 8, 'model__n_estimators': 400, 'model__subsample': 0.6}
-A Weight: 0.86
-B Weight: 0.14
-Best Blended Score: 0.99217
+Best Score: 0.99219
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.06, 'model__max_depth': 8, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.34
+B Weight: 0.66
+Best Blended Score: 0.99309
 
 Text Model: jamaican
-Best Score: 0.97626
+Best Score: 0.98057
 Best Grid {'model__C': 5, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 99}
-Best Score: 0.93410
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.04, 'model__max_depth': 14, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.98
-B Weight: 0.02
-Best Blended Score: 0.97623
+Best Score: 0.97256
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.04, 'model__max_depth': 14, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.46
+B Weight: 0.54
+Best Blended Score: 0.98242
 
 Text Model: spanish
-Best Score: 0.92783
+Best Score: 0.93086
 Best Grid {'model__C': 3, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 88}
-Best Score: 0.88795
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.06, 'model__max_depth': 12, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.94
-B Weight: 0.06
-Best Blended Score: 0.92820
+Best Score: 0.91873
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.08, 'model__max_depth': 14, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.4
+B Weight: 0.6
+Best Blended Score: 0.93358
 
 Text Model: italian
-Best Score: 0.97794
+Best Score: 0.97852
 Best Grid {'model__C': 5, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 91}
-Best Score: 0.96362
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.14, 'model__max_depth': 10, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.88
-B Weight: 0.12
-Best Blended Score: 0.97830
+Best Score: 0.97589
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.14, 'model__max_depth': 10, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.62
+B Weight: 0.38
+Best Blended Score: 0.97999
 
 Text Model: mexican
-Best Score: 0.98739
+Best Score: 0.98744
 Best Grid {'model__C': 7, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 93}
-Best Score: 0.97843
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.1, 'model__max_depth': 10, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.9
-B Weight: 0.1
-Best Blended Score: 0.98757
+Best Score: 0.98699
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.12, 'model__max_depth': 10, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.44
+B Weight: 0.56
+Best Blended Score: 0.98878
 
 Text Model: chinese
-Best Score: 0.98412
+Best Score: 0.98468
 Best Grid {'model__C': 5, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 76}
-Best Score: 0.97289
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.08, 'model__max_depth': 8, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.92
-B Weight: 0.08
-Best Blended Score: 0.98427
+Best Score: 0.98197
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.1, 'model__max_depth': 6, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.62
+B Weight: 0.38
+Best Blended Score: 0.98559
 
 Text Model: british
-Best Score: 0.96097
+Best Score: 0.96184
 Best Grid {'model__C': 10, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 75}
-Best Score: 0.91433
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.06, 'model__max_depth': 10, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.88
-B Weight: 0.12
-Best Blended Score: 0.96193
+Best Score: 0.95103
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.06, 'model__max_depth': 10, 'model__n_estimators': 400, 'model__subsample': 0.6}
+A Weight: 0.52
+B Weight: 0.48
+Best Blended Score: 0.96595
 
 Text Model: thai
-Best Score: 0.98494
+Best Score: 0.98514
 Best Grid {'model__C': 5, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 97}
-Best Score: 0.97285
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.12, 'model__max_depth': 10, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.8
-B Weight: 0.2
-Best Blended Score: 0.98591
+Best Score: 0.98418
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.14, 'model__max_depth': 10, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.2
+B Weight: 0.8
+Best Blended Score: 0.98743
 
 Text Model: vietnamese
-Best Score: 0.96674
+Best Score: 0.96740
 Best Grid {'model__C': 3, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 27}
-Best Score: 0.94598
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.04, 'model__max_depth': 10, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.9
-B Weight: 0.1
-Best Blended Score: 0.96720
+Best Score: 0.96566
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.04, 'model__max_depth': 10, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.36
+B Weight: 0.64
+Best Blended Score: 0.97084
 
 Text Model: cajun_creole
-Best Score: 0.97351
+Best Score: 0.97606
 Best Grid {'model__C': 5, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 88}
-Best Score: 0.95404
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.04, 'model__max_depth': 10, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.76
-B Weight: 0.24
-Best Blended Score: 0.97540
+Best Score: 0.97632
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.06, 'model__max_depth': 10, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.24
+B Weight: 0.76
+Best Blended Score: 0.97974
 
 Text Model: brazilian
-Best Score: 0.96083
+Best Score: 0.96170
 Best Grid {'model__C': 10, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 98}
-Best Score: 0.91212
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.04, 'model__max_depth': 10, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.9
-B Weight: 0.1
-Best Blended Score: 0.96165
+Best Score: 0.94701
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.04, 'model__max_depth': 10, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.42
+B Weight: 0.58
+Best Blended Score: 0.96501
 
 Text Model: french
-Best Score: 0.95103
-Best Grid {'model__C': 5, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 45}
-Best Score: 0.92174
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.1, 'model__max_depth': 10, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.92
-B Weight: 0.08
-Best Blended Score: 0.95147
+Best Score: 0.95286
+Best Grid {'model__C': 5, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 46}
+Best Score: 0.94356
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.1, 'model__max_depth': 10, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.64
+B Weight: 0.36
+Best Blended Score: 0.95529
 
 Text Model: japanese
-Best Score: 0.97547
+Best Score: 0.97565
 Best Grid {'model__C': 5, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 97}
-Best Score: 0.95540
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.06, 'model__max_depth': 8, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.88
-B Weight: 0.12
-Best Blended Score: 0.97629
+Best Score: 0.96945
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.08, 'model__max_depth': 8, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.54
+B Weight: 0.46
+Best Blended Score: 0.97792
 
 Text Model: irish
-Best Score: 0.95644
-Best Grid {'model__C': 8, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 15}
-Best Score: 0.92045
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.04, 'model__max_depth': 12, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.88
-B Weight: 0.12
-Best Blended Score: 0.95741
+Best Score: 0.95769
+Best Grid {'model__C': 8, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 17}
+Best Score: 0.94183
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.06, 'model__max_depth': 14, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.46
+B Weight: 0.54
+Best Blended Score: 0.96051
 
 Text Model: korean
-Best Score: 0.98832
+Best Score: 0.98765
 Best Grid {'model__C': 8, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 54}
-Best Score: 0.97336
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.08, 'model__max_depth': 6, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.98
-B Weight: 0.02
-Best Blended Score: 0.98826
+Best Score: 0.98458
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.1, 'model__max_depth': 6, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.38
+B Weight: 0.62
+Best Blended Score: 0.98846
 
 Text Model: moroccan
-Best Score: 0.98444
+Best Score: 0.98349
 Best Grid {'model__C': 10, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 55}
-Best Score: 0.96331
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.08, 'model__max_depth': 8, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.92
-B Weight: 0.08
-Best Blended Score: 0.98482
+Best Score: 0.97723
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.1, 'model__max_depth': 8, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.32
+B Weight: 0.68
+Best Blended Score: 0.98515
 
 Text Model: russian
-Best Score: 0.95562
+Best Score: 0.95936
 Best Grid {'model__C': 6, 'tfidf__ngram_range': (2, 6), 'feat__percentile': 91}
-Best Score: 0.90948
-Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.04, 'model__max_depth': 10, 'model__n_estimators': 300, 'model__subsample': 0.6}
-A Weight: 0.94
-B Weight: 0.06
-Best Blended Score: 0.95602
+Best Score: 0.93751
+Best Grid {'tfidf__ngram_range': (1, 2), 'model__nthread': 20, 'model__learning_rate': 0.06, 'model__max_depth': 10, 'model__n_estimators': 500, 'model__subsample': 0.6}
+A Weight: 0.64
+B Weight: 0.36
+Best Blended Score: 0.96028
 
 Feature Model: xgb
-Best Score: 0.80641
-Best Grid: {'feat__k': 75, 'union__lsa__svd__n_components': 50, 'model__nthread': 20, 'model__learning_rate': 0.08, 'model__max_depth': 16, 'model__n_estimators': 750, 'model__subsample': 0.65}
+Best Score: 0.81055
+Best Grid: {'feat__k': 85, 'union__lsa__svd__n_components': 50, 'model__nthread': 20, 'model__learning_rate': 0.08, 'model__max_depth': 16, 'model__n_estimators': 750, 'model__subsample': 0.65}
 
 Feature Model: rf
-Best Score: 0.80311
-Best Grid: {'feat__k': 80, 'union__lsa__svd__n_components': 75, 'model__max_features': 8, 'model__max_depth': 35, 'model__n_jobs': 20, 'model__n_estimators': 500}
+Best Score: 0.80917
+Best Grid: {'feat__k': 80, 'union__lsa__svd__n_components': 90, 'model__max_features': 8, 'model__max_depth': 35, 'model__n_jobs': 20, 'model__n_estimators': 750}
 
 Recipe Model
-Blended Accuracy: 0.80814
-Model A Weight: 0.35
-Model B Weight: 0.65
+Blended Accuracy: 0.81231
+Model A Weight: 0.21
+Model B Weight: 0.79
